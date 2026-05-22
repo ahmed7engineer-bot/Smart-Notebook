@@ -40,7 +40,7 @@ p{
   font-size:18px;
 }
 
-/* Search */
+/* SEARCH */
 
 .search-box{
   position:relative;
@@ -54,7 +54,6 @@ p{
   border:none;
   border-radius:10px;
   outline:none;
-  font-size:16px;
 }
 
 .search-box i{
@@ -65,7 +64,7 @@ p{
   color:#555;
 }
 
-/* Cards */
+/* CARDS */
 
 .cards{
   display:flex;
@@ -79,16 +78,7 @@ p{
   width:300px;
   padding:20px;
   border-radius:20px;
-  box-shadow:0 0 15px rgba(0,0,0,0.3);
-  transition:0.3s;
 }
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 20px rgba(59,130,246,0.5);
-}
-
-/* Card Images */
 
 .card-img{
   width:100%;
@@ -98,12 +88,7 @@ p{
   margin-bottom:15px;
 }
 
-.card h2{
-  color:#38bdf8;
-  margin-bottom:10px;
-}
-
-/* Buttons */
+/* BUTTON */
 
 .btn{
   display:inline-block;
@@ -113,95 +98,46 @@ p{
   color:white;
   border:none;
   border-radius:10px;
-  font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
 }
 
-.btn:hover{
-  background:#2563eb;
-}
-
-/* Videos */
-
-.videos-section{
-  display:none;
-  margin-top:60px;
-}
-
-.videos-section h2{
-  margin-bottom:25px;
-  color:#facc15;
-}
-
-.video-box{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.video-box iframe{
-  width:350px;
-  height:200px;
-  border:none;
-  border-radius:15px;
-}
-
-/* Footer */
-
-.footer{
-  margin-top:60px;
-  color:#94a3b8;
-  font-size:14px;
-  text-align:center;
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-  h1{
-    font-size:32px;
-  }
-
-  .card{
-    width:100%;
-    max-width:340px;
-  }
-
-  .video-box iframe{
-    width:100%;
-  }
+/* INSTAGRAM ICON (دائرة احترافية) */
 
 .instagram{
-  width:60px;
-  height:60px;
-  background:#E1306C;
-  color:white;
-
   display:flex;
   align-items:center;
   justify-content:center;
 
+  width:65px;
+  height:65px;
+
+  margin:30px auto 0;
+
+  background:#E1306C;
+  color:white;
+
   border-radius:50%;
 
-  font-size:30px;
+  font-size:32px;
 
-  margin:20px auto;
+  text-decoration:none;
 
   transition:0.3s;
 }
-  .instagram:hover{
+
+.instagram:hover{
   transform:scale(1.2);
   background:#c2185b;
 }
-  .instagram{
-  background:#E1306C !important;
-  width:60px !important;
-  height:60px !important;
-  border-radius:50% !important;
+
+/* FOOTER */
+
+.footer{
+  margin-top:40px;
+  color:#94a3b8;
+  font-size:14px;
 }
+
 </style>
 </head>
 
@@ -211,152 +147,39 @@ p{
 
 <h1>📘 المهندس احمد اللهيبي</h1>
 
-<p>منصة تعليمية للمراحل الدراسية</p>
+<p>منصة تعليمية</p>
 
-<!-- Search -->
-
+<!-- SEARCH -->
 <div class="search-box">
-
-<input type="text"
-id="searchInput"
-placeholder="ابحث عن المرحلة...">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
+  <input type="text" placeholder="ابحث هنا...">
+  <i class="fa-solid fa-magnifying-glass"></i>
 </div>
 
-<!-- Cards -->
-
+<!-- CARDS -->
 <div class="cards">
 
-<!-- الثالث متوسط -->
+  <div class="card">
+    <img src="third.jpg" class="card-img">
+    <h2>📗 الثالث متوسط</h2>
+    <button class="btn">Open</button>
+  </div>
 
-<div class="card">
+  <div class="card">
+    <img src="fourth.jpg" class="card-img">
+    <h2>📘 الرابع اعدادي</h2>
+    <button class="btn">Open</button>
+  </div>
 
-<img src="download (7)s.jpg" class="card-img">
-
-<h2 class="card-title">📗 الثالث متوسط</h2>
-
-<p>محاضرات وفيديوهات</p>
-
-<button class="btn"
-onclick="showVideos('thirdVideos')">
-Open
-</button>
-
-</div>
-
-<!-- الرابع اعدادي -->
-
-<div class="card">
-
-<img src="download ().jpg" class="card-img">
-
-<h2 class="card-title">📘 الرابع اعدادي</h2>
-
-<p>فيديوهات وملخصات</p>
-
-<button class="btn"
-onclick="showVideos('fourthVideos')">
-Open
-</button>
+  <div class="card">
+    <img src="fifth.jpg" class="card-img">
+    <h2>📙 الخامس اعدادي</h2>
+    <button class="btn">Open</button>
+  </div>
 
 </div>
 
-<!-- الخامس اعدادي -->
-
-<div class="card">
-
-<img src="sp.jpg" class="card-img">
-
-<h2 class="card-title">📙 الخامس اعدادي</h2>
-
-<p>مصادر تعليمية</p>
-
-<button class="btn"
-onclick="showVideos('fifthVideos')">
-Open
-</button>
-
-</div>
-
-</div>
-
-<!-- فيديوهات الثالث -->
-
-<div id="thirdVideos" class="videos-section">
-
-<h2>📗 فيديوهات الثالث متوسط</h2>
-
-<div class="video-box">
-
-<iframe
-src="https://www.youtube.com/embed/xTUywiwbv9k"
-allowfullscreen>
-</iframe>
-
-<iframe
-src="https://www.youtube.com/embed/tewB49rtcw4"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<!-- فيديوهات الرابع -->
-
-<div id="fourthVideos" class="videos-section">
-
-<h2>📘 فيديوهات الرابع اعدادي</h2>
-
-<div class="video-box">
-
-<iframe
-src="https://www.youtube.com/embed/acXwfmPYM7s"
-allowfullscreen>
-</iframe>
-
-<iframe
-src="https://www.youtube.com/embed/DaJmwTrXRwA"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<!-- فيديوهات الخامس -->
-
-<div id="fifthVideos" class="videos-section">
-
-<h2>📙 فيديوهات الخامس اعدادي</h2>
-
-<div class="video-box">
-
-<iframe
-src="https://www.youtube.com/embed/Vfo243mOpqI"
-allowfullscreen>
-</iframe>
-
-<iframe
-src="https://www.youtube.com/embed/6SnUb_FiOTM"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<!-- Footer -->
-
-<!-- Footer -->
-
-<div class="footer">
-
-<p>Developed by Eng Ahmed A. Zaidan ⚡</p>
-
-<a href="https://instagram.com/ah4.l"
+<!-- INSTAGRAM ICON -->
+<a href="https://instagram.com/USERNAME"
 target="_blank"
 class="instagram">
 
@@ -364,73 +187,12 @@ class="instagram">
 
 </a>
 
+<!-- FOOTER -->
+<div class="footer">
+Developed by Eng Ahmed A. Zaidan ⚡
 </div>
-<!-- JavaScript -->
 
-<script>
-
-/* Search */
-
-const searchInput =
-document.getElementById("searchInput");
-
-const cards =
-document.querySelectorAll(".card");
-
-searchInput.addEventListener("keyup", function(){
-
-const searchValue =
-searchInput.value.toLowerCase();
-
-cards.forEach(card => {
-
-const title =
-card.querySelector(".card-title")
-.textContent.toLowerCase();
-
-if(title.includes(searchValue)){
-
-card.style.display = "block";
-
-}else{
-
-card.style.display = "none";
-
-}
-
-});
-
-});
-
-/* Show Videos */
-
-function showVideos(id){
-
-document
-.querySelectorAll('.videos-section')
-.forEach(section => {
-
-section.style.display = "none";
-
-});
-
-document
-.getElementById(id)
-.style.display = "block";
-
-window.scrollTo({
-
-top:
-document.getElementById(id)
-.offsetTop,
-
-behavior:"smooth"
-
-});
-
-}
-
-</script>
+</div>
 
 </body>
 </html>
