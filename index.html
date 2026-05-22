@@ -12,8 +12,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
 
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family:Arial, sans-serif;
   background:#0f172a;
   color:white;
@@ -33,7 +38,6 @@ h1{
 p{
   color:#cbd5e1;
   font-size:18px;
-  margin-bottom:40px;
 }
 
 /* Search */
@@ -41,7 +45,7 @@ p{
 .search-box{
   position:relative;
   width:300px;
-  margin:20px auto;
+  margin:30px auto;
 }
 
 .search-box input{
@@ -67,12 +71,12 @@ p{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
+  gap:25px;
 }
 
 .card{
   background:#1e293b;
-  width:280px;
+  width:300px;
   padding:20px;
   border-radius:20px;
   box-shadow:0 0 15px rgba(0,0,0,0.3);
@@ -80,11 +84,23 @@ p{
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
+  box-shadow:0 0 20px rgba(59,130,246,0.5);
+}
+
+/* Card Images */
+
+.card-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
 }
 
 .card h2{
   color:#38bdf8;
+  margin-bottom:10px;
 }
 
 /* Buttons */
@@ -110,11 +126,11 @@ p{
 
 .videos-section{
   display:none;
-  margin-top:50px;
+  margin-top:60px;
 }
 
 .videos-section h2{
-  margin-bottom:20px;
+  margin-bottom:25px;
   color:#facc15;
 }
 
@@ -135,9 +151,28 @@ p{
 /* Footer */
 
 .footer{
-  margin-top:50px;
+  margin-top:60px;
   color:#94a3b8;
   font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  h1{
+    font-size:32px;
+  }
+
+  .card{
+    width:100%;
+    max-width:340px;
+  }
+
+  .video-box iframe{
+    width:100%;
+  }
+
 }
 
 </style>
@@ -149,63 +184,74 @@ p{
 
 <h1>📘 المهندس احمد اللهيبي</h1>
 
-<p>Engineer</p>
+<p>منصة تعليمية للمراحل الدراسية</p>
 
 <!-- Search -->
 
 <div class="search-box">
-  <input type="text" id="searchInput" placeholder="ابحث هنا...">
-  <i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text"
+id="searchInput"
+placeholder="ابحث عن المرحلة...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
 </div>
 
 <!-- Cards -->
 
 <div class="cards">
 
-  <!-- الثالث متوسط -->
+<!-- الثالث متوسط -->
 
-  <div class="card">
+<div class="card">
 
-    <h2 class="card-title">📗 الثالث متوسط</h2>
+<img src="third.jpg" class="card-img">
 
-    <p>محاضرات وفيديوهات</p>
+<h2 class="card-title">📗 الثالث متوسط</h2>
 
-    <button class="btn"
-    onclick="showVideos('thirdVideos')">
-    Open
-    </button>
+<p>محاضرات وفيديوهات</p>
 
-  </div>
+<button class="btn"
+onclick="showVideos('thirdVideos')">
+Open
+</button>
 
-  <!-- الرابع اعدادي -->
+</div>
 
-  <div class="card">
+<!-- الرابع اعدادي -->
 
-    <h2 class="card-title">📘 الرابع اعدادي</h2>
+<div class="card">
 
-    <p>فيديوهات وملخصات</p>
+<img src="fourth.jpg" class="card-img">
 
-    <button class="btn"
-    onclick="showVideos('fourthVideos')">
-    Open
-    </button>
+<h2 class="card-title">📘 الرابع اعدادي</h2>
 
-  </div>
+<p>فيديوهات وملخصات</p>
 
-  <!-- الخامس اعدادي -->
+<button class="btn"
+onclick="showVideos('fourthVideos')">
+Open
+</button>
 
-  <div class="card">
+</div>
 
-    <h2 class="card-title">📙 الخامس اعدادي</h2>
+<!-- الخامس اعدادي -->
 
-    <p>مصادر تعليمية</p>
+<div class="card">
 
-    <button class="btn"
-    onclick="showVideos('fifthVideos')">
-    Open
-    </button>
+<img src="fifth.jpg" class="card-img">
 
-  </div>
+<h2 class="card-title">📙 الخامس اعدادي</h2>
+
+<p>مصادر تعليمية</p>
+
+<button class="btn"
+onclick="showVideos('fifthVideos')">
+Open
+</button>
+
+</div>
 
 </div>
 
@@ -217,11 +263,15 @@ p{
 
 <div class="video-box">
 
-<iframe src="https://www.youtube.com/embed/xTUywiwbv9k"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/xTUywiwbv9k"
+allowfullscreen>
+</iframe>
 
-<iframe src="https://www.youtube.com/embed/tewB49rtcw4"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/tewB49rtcw4"
+allowfullscreen>
+</iframe>
 
 </div>
 
@@ -235,11 +285,15 @@ allowfullscreen></iframe>
 
 <div class="video-box">
 
-<iframe src="https://www.youtube.com/embed/acXwfmPYM7s"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/acXwfmPYM7s"
+allowfullscreen>
+</iframe>
 
-<iframe src="https://www.youtube.com/embed/DaJmwTrXRwA"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/DaJmwTrXRwA"
+allowfullscreen>
+</iframe>
 
 </div>
 
@@ -253,11 +307,15 @@ allowfullscreen></iframe>
 
 <div class="video-box">
 
-<iframe src="https://www.youtube.com/embed/Vfo243mOpqI"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/Vfo243mOpqI"
+allowfullscreen>
+</iframe>
 
-<iframe src="https://www.youtube.com/embed/6SnUb_FiOTM"
-allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/6SnUb_FiOTM"
+allowfullscreen>
+</iframe>
 
 </div>
 
@@ -295,16 +353,20 @@ card.querySelector(".card-title")
 .textContent.toLowerCase();
 
 if(title.includes(searchValue)){
+
 card.style.display = "block";
+
 }else{
+
 card.style.display = "none";
+
 }
 
 });
 
 });
 
-/* Videos */
+/* Show Videos */
 
 function showVideos(id){
 
@@ -316,13 +378,18 @@ section.style.display = "none";
 
 });
 
-document.getElementById(id)
+document
+.getElementById(id)
 .style.display = "block";
 
 window.scrollTo({
-top:document.getElementById(id)
+
+top:
+document.getElementById(id)
 .offsetTop,
+
 behavior:"smooth"
+
 });
 
 }
