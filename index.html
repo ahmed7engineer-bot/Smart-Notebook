@@ -116,7 +116,7 @@ p{
 
 <p>engineer </p>
   <div class="search-box">
-  <input type="text" placeholder="ابحث هنا...">
+ <input type="text" id="searchInput" placeholder="ابحث هنا...">
   <i class="fa-solid fa-magnifying-glass"></i>
 </div>
 
@@ -124,7 +124,7 @@ p{
 
   <!-- Math -->
   <div class="card">
-    <h2>📗 الثالث متوسط </h2>
+    <h2 class="card-title">📗 الثالث متوسط </h2>
     <p>Lectures & Videos</p>
 
     <div class="video-box">
@@ -137,7 +137,8 @@ p{
 
   <!-- Physics -->
   <div class="card">
-    <h2>📘 الرابع اعدادي </h2>
+ <h2 class="card-title">📘 الرابع اعدادي </h2>
+
     <p>Videos & Notes</p>
 
     <div class="video-box">
@@ -150,7 +151,7 @@ p{
 
   <!-- CS -->
   <div class="card">
-    <h2>الخامس اعدادي </h2>
+   <h2 class="card-title">الخامس اعدادي </h2>
     <p>Programming resources</p>
 
     <div class="video-box">
@@ -168,6 +169,27 @@ p{
 </div>
 
 </div>
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
 
+searchInput.addEventListener("keyup", function() {
+
+  const searchValue = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+
+    const title = card.querySelector(".card-title").textContent.toLowerCase();
+
+    if(title.includes(searchValue)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
