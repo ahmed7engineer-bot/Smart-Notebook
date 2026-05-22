@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<title>المهندس احمد اللهيبي </title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>المهندس احمد اللهيبي</title>
 
 <style>
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#0f172a;
-  color:yellow;
+  color:white;
   text-align:center;
 }
 
@@ -21,6 +26,7 @@ body{
 
 h1{
   font-size:45px;
+  color:#facc15;
   margin-bottom:10px;
 }
 
@@ -30,6 +36,33 @@ p{
   margin-bottom:40px;
 }
 
+/* Search */
+
+.search-box{
+  position:relative;
+  width:300px;
+  margin:20px auto;
+}
+
+.search-box input{
+  width:100%;
+  padding:12px 40px 12px 15px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.search-box i{
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#555;
+}
+
+/* Cards */
+
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -37,7 +70,6 @@ p{
   gap:20px;
 }
 
-/* Card Design */
 .card{
   background:#1e293b;
   width:280px;
@@ -51,60 +83,63 @@ p{
   transform:translateY(-6px);
 }
 
-/* Video Section */
-.video-box{
-  margin-top:15px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.card h2{
+  color:#38bdf8;
 }
 
-.video-box iframe{
-  width:100%;
-  height:160px;
-  border-radius:12px;
-  border:none;
-}
+/* Buttons */
 
-/* Button */
 .btn{
   display:inline-block;
   margin-top:15px;
   padding:10px 18px;
   background:#3b82f6;
   color:white;
-  text-decoration:none;
+  border:none;
   border-radius:10px;
   font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#2563eb;
+}
+
+/* Videos */
+
+.videos-section{
+  display:none;
+  margin-top:50px;
+}
+
+.videos-section h2{
+  margin-bottom:20px;
+  color:#facc15;
+}
+
+.video-box{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.video-box iframe{
+  width:350px;
+  height:200px;
+  border:none;
+  border-radius:15px;
 }
 
 /* Footer */
+
 .footer{
   margin-top:50px;
   color:#94a3b8;
   font-size:14px;
 }
-  .search-box{
-  position:relative;
-  width:300px;
-  margin:20px auto;
-}
 
-.search-box input{
-  width:100%;
-  padding:12px 40px 12px 15px;
-  border:none;
-  border-radius:10px;
-  outline:none;
-}
-
-.search-box i{
-  position:absolute;
-  right:15px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#555;
-}
 </style>
 </head>
 
@@ -112,84 +147,187 @@ p{
 
 <div class="container">
 
-<h1>📘 المهندس احمد اللهيبي </h1>
+<h1>📘 المهندس احمد اللهيبي</h1>
 
-<p>engineer </p>
-  <div class="search-box">
- <input type="text" id="searchInput" placeholder="ابحث هنا...">
+<p>Engineer</p>
+
+<!-- Search -->
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="ابحث هنا...">
   <i class="fa-solid fa-magnifying-glass"></i>
 </div>
 
+<!-- Cards -->
+
 <div class="cards">
 
-  <!-- Math -->
+  <!-- الثالث متوسط -->
+
   <div class="card">
-    <h2 class="card-title">📗 الثالث متوسط </h2>
-    <p>Lectures & Videos</p>
 
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/xTUywiwbv9k&t" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/tewB49rtcw4" allowfullscreen></iframe>
-    </div>
+    <h2 class="card-title">📗 الثالث متوسط</h2>
 
-    <a class="btn" href="https://example.com" target="_blank">More Resources</a>
+    <p>محاضرات وفيديوهات</p>
+
+    <button class="btn"
+    onclick="showVideos('thirdVideos')">
+    Open
+    </button>
+
   </div>
 
-  <!-- Physics -->
+  <!-- الرابع اعدادي -->
+
   <div class="card">
- <h2 class="card-title">📘 الرابع اعدادي </h2>
 
-    <p>Videos & Notes</p>
+    <h2 class="card-title">📘 الرابع اعدادي</h2>
 
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/acXwfmPYM7s" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/DaJmwTrXRwA" allowfullscreen></iframe>
-    </div>
+    <p>فيديوهات وملخصات</p>
 
-    <a class="btn" href="https://example.com" target="_blank">Open</a>
+    <button class="btn"
+    onclick="showVideos('fourthVideos')">
+    Open
+    </button>
+
   </div>
 
-  <!-- CS -->
+  <!-- الخامس اعدادي -->
+
   <div class="card">
-   <h2 class="card-title">الخامس اعدادي </h2>
-    <p>Programming resources</p>
 
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/Vfo243mOpqI" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/6SnUb_FiOTM" allowfullscreen></iframe>
-    </div>
+    <h2 class="card-title">📙 الخامس اعدادي</h2>
 
-    <a class="btn" href="third.html" target="_blank">Open</a>
+    <p>مصادر تعليمية</p>
+
+    <button class="btn"
+    onclick="showVideos('fifthVideos')">
+    Open
+    </button>
+
   </div>
 
 </div>
+
+<!-- فيديوهات الثالث -->
+
+<div id="thirdVideos" class="videos-section">
+
+<h2>📗 فيديوهات الثالث متوسط</h2>
+
+<div class="video-box">
+
+<iframe src="https://www.youtube.com/embed/xTUywiwbv9k"
+allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/tewB49rtcw4"
+allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+<!-- فيديوهات الرابع -->
+
+<div id="fourthVideos" class="videos-section">
+
+<h2>📘 فيديوهات الرابع اعدادي</h2>
+
+<div class="video-box">
+
+<iframe src="https://www.youtube.com/embed/acXwfmPYM7s"
+allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/DaJmwTrXRwA"
+allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+<!-- فيديوهات الخامس -->
+
+<div id="fifthVideos" class="videos-section">
+
+<h2>📙 فيديوهات الخامس اعدادي</h2>
+
+<div class="video-box">
+
+<iframe src="https://www.youtube.com/embed/Vfo243mOpqI"
+allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/6SnUb_FiOTM"
+allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+<!-- Footer -->
 
 <div class="footer">
- developed by Eng Ahmed A. Zaidan⚡
+Developed by Eng Ahmed A. Zaidan ⚡
 </div>
 
 </div>
+
+<!-- JavaScript -->
+
 <script>
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
 
-searchInput.addEventListener("keyup", function() {
+/* Search */
 
-  const searchValue = searchInput.value.toLowerCase();
+const searchInput =
+document.getElementById("searchInput");
 
-  cards.forEach(card => {
+const cards =
+document.querySelectorAll(".card");
 
-    const title = card.querySelector(".card-title").textContent.toLowerCase();
+searchInput.addEventListener("keyup", function(){
 
-    if(title.includes(searchValue)){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+const searchValue =
+searchInput.value.toLowerCase();
 
-  });
+cards.forEach(card => {
+
+const title =
+card.querySelector(".card-title")
+.textContent.toLowerCase();
+
+if(title.includes(searchValue)){
+card.style.display = "block";
+}else{
+card.style.display = "none";
+}
 
 });
+
+});
+
+/* Videos */
+
+function showVideos(id){
+
+document
+.querySelectorAll('.videos-section')
+.forEach(section => {
+
+section.style.display = "none";
+
+});
+
+document.getElementById(id)
+.style.display = "block";
+
+window.scrollTo({
+top:document.getElementById(id)
+.offsetTop,
+behavior:"smooth"
+});
+
+}
+
 </script>
+
 </body>
 </html>
