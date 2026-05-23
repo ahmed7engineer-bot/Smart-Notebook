@@ -25,8 +25,42 @@ body{
   text-align:center;
 }
 
+/* LOGIN PAGE */
+
+#loginPage{
+  width:320px;
+  margin:120px auto;
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+#loginPage h2{
+  margin-bottom:25px;
+  color:#facc15;
+}
+
+#loginPage input{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+#message{
+  margin-top:15px;
+  color:#ff6b6b;
+}
+
+/* MAIN WEBSITE */
+
 .container{
   padding:40px 20px;
+  display:none;
 }
 
 h1{
@@ -78,6 +112,11 @@ p{
   width:300px;
   padding:20px;
   border-radius:20px;
+  transition:0.5s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
 }
 
 .card-img{
@@ -93,15 +132,22 @@ p{
 .btn{
   display:inline-block;
   margin-top:15px;
-  padding:10px 18px;
+  padding:12px 20px;
   background:#3b82f6;
   color:white;
   border:none;
   border-radius:10px;
   cursor:pointer;
+  font-size:16px;
+  transition:0.4s;
 }
 
-/* INSTAGRAM ICON (دائرة احترافية) */
+.btn:hover{
+  background:#2563eb;
+  transform:scale(1.05);
+}
+
+/* INSTAGRAM */
 
 .instagram{
   display:flex;
@@ -111,22 +157,22 @@ p{
   width:75px;
   height:75px;
 
-  margin:30px auto 0;
+  margin:35px auto 0;
 
   background:#E1306C;
   color:white;
 
-  border-radius:60px;
+  border-radius:50%;
 
   font-size:32px;
 
   text-decoration:none;
 
-  transition:0.9s;
+  transition:0.6s;
 }
 
 .instagram:hover{
-  transform:scale(1.2);
+  transform:scale(1.2) rotate(10deg);
   background:#c2185b;
 }
 
@@ -143,6 +189,31 @@ p{
 
 <body>
 
+<!-- LOGIN PAGE -->
+
+<div id="loginPage">
+
+<h2>تسجيل الدخول</h2>
+
+<input type="text"
+id="username"
+placeholder="اسم المستخدم">
+
+<input type="password"
+id="password"
+placeholder="كلمة المرور">
+
+<button class="btn"
+onclick="login()">
+دخول
+</button>
+
+<p id="message"></p>
+
+</div>
+
+<!-- MAIN WEBSITE -->
+
 <div class="container">
 
 <h1>📘 المهندس احمد اللهيبي</h1>
@@ -150,35 +221,50 @@ p{
 <p>منصة تعليمية</p>
 
 <!-- SEARCH -->
+
 <div class="search-box">
-  <input type="text" placeholder="ابحث هنا...">
-  <i class="fa-solid fa-magnifying-glass"></i>
+<input type="text" placeholder="ابحث هنا...">
+<i class="fa-solid fa-magnifying-glass"></i>
 </div>
 
 <!-- CARDS -->
+
 <div class="cards">
 
-  <div class="card">
-    <img src="third.jpg" class="card-img">
-    <h2>📗 الثالث متوسط</h2>
-    <button class="btn">Open</button>
-  </div>
+<div class="card">
+<img src="third.jpg" class="card-img">
 
-  <div class="card">
-    <img src="fourth.jpg" class="card-img">
-    <h2>📘 الرابع اعدادي</h2>
-    <button class="btn">Open</button>
-  </div>
+<h2>📗 الثالث متوسط</h2>
 
-  <div class="card">
-    <img src="fifth.jpg" class="card-img">
-    <h2>📙 الخامس اعدادي</h2>
-    <button class="btn">Open</button>
-  </div>
+<button class="btn">
+Open
+</button>
+</div>
+
+<div class="card">
+<img src="fourth.jpg" class="card-img">
+
+<h2>📘 الرابع اعدادي</h2>
+
+<button class="btn">
+Open
+</button>
+</div>
+
+<div class="card">
+<img src="fifth.jpg" class="card-img">
+
+<h2>📙 الخامس اعدادي</h2>
+
+<button class="btn">
+Open
+</button>
+</div>
 
 </div>
 
-<!-- INSTAGRAM ICON -->
+<!-- INSTAGRAM -->
+
 <a href="https://instagram.com/ah4.l"
 target="_blank"
 class="instagram">
@@ -188,11 +274,45 @@ class="instagram">
 </a>
 
 <!-- FOOTER -->
+
 <div class="footer">
 Developed by Eng Ahmed A. Zaidan ⚡
 </div>
 
 </div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function login(){
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if(username === "ahmed" &&
+password === "1234"){
+
+document.getElementById("loginPage")
+.style.display = "none";
+
+document.querySelector(".container")
+.style.display = "block";
+
+}else{
+
+document.getElementById("message")
+.innerHTML =
+"اسم المستخدم او كلمة المرور غير صحيحة";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
