@@ -1,3 +1,6 @@
+# كود الموقع الكامل
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -25,42 +28,8 @@ body{
   text-align:center;
 }
 
-/* LOGIN PAGE */
-
-#loginPage{
-  width:320px;
-  margin:120px auto;
-  background:#1e293b;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-
-#loginPage h2{
-  margin-bottom:25px;
-  color:#facc15;
-}
-
-#loginPage input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:none;
-  border-radius:10px;
-  outline:none;
-  font-size:16px;
-}
-
-#message{
-  margin-top:15px;
-  color:#ff6b6b;
-}
-
-/* MAIN WEBSITE */
-
 .container{
   padding:40px 20px;
-  display:none;
 }
 
 h1{
@@ -147,6 +116,33 @@ p{
   transform:scale(1.05);
 }
 
+/* VIDEO SECTION */
+
+.video-section{
+  display:none;
+  margin-top:50px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.video-card{
+  background:#1e293b;
+  padding:15px;
+  border-radius:20px;
+}
+
+iframe{
+  width:100%;
+  height:200px;
+  border:none;
+  border-radius:15px;
+}
+
 /* INSTAGRAM */
 
 .instagram{
@@ -189,31 +185,6 @@ p{
 
 <body>
 
-<!-- LOGIN PAGE -->
-
-<div id="loginPage">
-
-<h2>تسجيل الدخول</h2>
-
-<input type="text"
-id="username"
-placeholder="اسم المستخدم">
-
-<input type="password"
-id="password"
-placeholder="كلمة المرور">
-
-<button class="btn"
-onclick="login()">
-دخول
-</button>
-
-<p id="message"></p>
-
-</div>
-
-<!-- MAIN WEBSITE -->
-
 <div class="container">
 
 <h1>📘 المهندس احمد اللهيبي</h1>
@@ -235,13 +206,8 @@ onclick="login()">
 <img src="third.jpg" class="card-img">
 
 <h2>📗 الثالث متوسط</h2>
-<iframe width="100%" height="200"
-src="https://www.youtube.com/embed/WhL9kFAS9RI"
-title="YouTube video player"
-frameborder="0"
-allowfullscreen>
-</iframe>
-<button class="btn">
+
+<button class="btn" onclick="showVideos('thirdVideos')">
 Open
 </button>
 </div>
@@ -250,18 +216,8 @@ Open
 <img src="fourth.jpg" class="card-img">
 
 <h2>📘 الرابع اعدادي</h2>
-<div class="card">
 
-<h2>شرح الرياضيات</h2>
-
-<iframe width="100%" height="200"
-src="https://www.youtube.com/embed/WhL9kFAS9RI"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-<button class="btn">
+<button class="btn" onclick="showVideos('fourthVideos')">
 Open
 </button>
 </div>
@@ -270,22 +226,75 @@ Open
 <img src="fifth.jpg" class="card-img">
 
 <h2>📙 الخامس اعدادي</h2>
-<div class="card">
 
-<h2>شرح الرياضيات</h2>
-
-<iframe width="100%" height="200"
-src="https://www.youtube.com/embed/WhL9kFAS9RI"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-<button class="btn">
+<button class="btn" onclick="showVideos('fifthVideos')">
 Open
 </button>
 </div>
 
+</div>
+
+<!-- THIRD VIDEOS -->
+
+<div id="thirdVideos" class="video-section">
+<h2>فيديوهات الثالث متوسط</h2>
+
+<div class="video-grid">
+
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 1</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 2</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 3</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 4</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 5</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 6</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 7</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 8</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 9</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 10</p></div>
+
+</div>
+</div>
+
+<!-- FOURTH VIDEOS -->
+
+<div id="fourthVideos" class="video-section">
+<h2>فيديوهات الرابع اعدادي</h2>
+
+<div class="video-grid">
+
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 1</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 2</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 3</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 4</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 5</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 6</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 7</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 8</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 9</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 10</p></div>
+
+</div>
+</div>
+
+<!-- FIFTH VIDEOS -->
+
+<div id="fifthVideos" class="video-section">
+<h2>فيديوهات الخامس اعدادي</h2>
+
+<div class="video-grid">
+
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 1</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 2</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 3</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 4</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 5</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 6</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 7</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 8</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 9</p></div>
+<div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><p>الفيديو 10</p></div>
+
+</div>
 </div>
 
 <!-- INSTAGRAM -->
@@ -306,34 +315,22 @@ Developed by Eng Ahmed A. Zaidan ⚡
 
 </div>
 
-<!-- JAVASCRIPT -->
-
 <script>
 
-function login(){
+function showVideos(id){
 
-let username =
-document.getElementById("username").value;
+let sections = document.querySelectorAll('.video-section');
 
-let password =
-document.getElementById("password").value;
+sections.forEach(function(section){
+section.style.display = 'none';
+});
 
-if(username === "ahmed" &&
-password === "1234"){
+document.getElementById(id).style.display = 'block';
 
-document.getElementById("loginPage")
-.style.display = "none";
-
-document.querySelector(".container")
-.style.display = "block";
-
-}else{
-
-document.getElementById("message")
-.innerHTML =
-"اسم المستخدم او كلمة المرور غير صحيحة";
-
-}
+window.scrollTo({
+  top: document.getElementById(id).offsetTop,
+  behavior: 'smooth'
+});
 
 }
 
@@ -341,3 +338,14 @@ document.getElementById("message")
 
 </body>
 </html>
+```
+
+بدل روابط الفيديوهات الحالية بروابط فيديوهاتك من يوتيوب.
+
+بدل هذا الجزء:
+
+```html
+https://www.youtube.com/embed/dQw4w9WgXcQ
+```
+
+بمعرف فيديوهاتك.
